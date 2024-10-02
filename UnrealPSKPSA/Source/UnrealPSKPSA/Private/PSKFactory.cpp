@@ -8,6 +8,7 @@
 #include "MeshDescription.h"
 #include "PSKReader.h"
 #include "AssetRegistry/AssetRegistryModule.h"
+#include "Engine/SkinnedAssetCommon.h"
 #include "ImportUtils/SkeletalMeshImportUtils.h"
 #include "Materials/MaterialInstanceConstant.h"
 #include "Rendering/SkeletalMeshLODModel.h"
@@ -124,12 +125,12 @@ UObject* UPSKFactory::Import(const FString Filename, UObject* Parent, const FNam
 	}
 	SkeletalMeshImportData.MaxMaterialIndex = SkeletalMeshImportData.Materials.Num()-1;
 
-	SkeletalMeshImportData.bDiffPose = false;
+	// SkeletalMeshImportData.bDiffPose = false;
 	SkeletalMeshImportData.bHasNormals = Psk.bHasVertexNormals;
 	SkeletalMeshImportData.bHasTangents = false;
 	SkeletalMeshImportData.bHasVertexColors = true;
 	SkeletalMeshImportData.NumTexCoords = 1 + Psk.ExtraUVs.Num(); 
-	SkeletalMeshImportData.bUseT0AsRefPose = false;
+	// SkeletalMeshImportData.bUseT0AsRefPose = false;
 	
 	const auto Skeleton = FActorXUtils::LocalCreate<USkeleton>(USkeleton::StaticClass(), Parent,  Name.ToString().Append("_Skeleton"), Flags);
 

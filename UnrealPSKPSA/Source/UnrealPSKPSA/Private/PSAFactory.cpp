@@ -3,6 +3,7 @@
 
 #include "PSAFactory.h"
 
+#include "ComponentReregisterContext.h"
 #include "EditorAssetLibrary.h"
 #include "PSAReader.h"
 #include "AssetRegistry/AssetRegistryModule.h"
